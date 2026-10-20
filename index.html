@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Construcciones Juan Manuel Moreno</title>
+    <meta
+      name="description"
+      content="Construcciones Juan Manuel Moreno: obra residencial, remodelaciones, ampliaciones, pisos y acabados, mantenimiento y rehabilitación en Aguilar de la Frontera, Córdoba."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f7f6f3;
+        --bg-2: #f0efe9;
+        --card: #ffffff;
+        --text: #1d1d1b;
+        --muted: #66625b;
+        --line: rgba(29, 29, 27, 0.12);
+        --primary: #c58b3d;
+        --primary-dark: #a96f22;
+        --accent: #1d3d2d;
+        --shadow: 0 25px 60px rgba(18, 24, 23, 0.08);
+        --radius: 24px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Manrope", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      button,
+      input,
+      textarea {
+        font: inherit;
+      }
+
+      .container {
+        width: min(1200px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .section-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.1;
+        margin-bottom: 18px;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+      }
+
+      .section-subtitle {
+        color: var(--muted);
+        font-size: 1.02rem;
+        max-width: 700px;
+      }
+
+      .topbar {
+        background: rgba(255, 255, 255, 0.62);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--line);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+
+      .topbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 82px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+      }
+
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--primary), #d6a15f);
+        color: white;
+        font-size: 1.2rem;
+        box-shadow: var(--shadow);
+      }
+
+      .brand-text small {
+        display: block;
+        font-size: 0.61rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+        font-weight: 700;
+      }
+
+      .brand-text strong {
+        display: block;
+        font-size: 1rem;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+      }
+
+      .nav a {
+        color: var(--muted);
+        font-weight: 600;
+        transition: color 0.2s ease;
+      }
+
+      .nav a:hover {
+        color: var(--text);
+      }
+
+      .nav-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.9rem 1.3rem;
+        border-radius: 999px;
+        background: var(--text);
+        color: white;
+        font-weight: 700;
+        border: 1px solid transparent;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .nav-cta:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 12px 28px rgba(29, 29, 27, 0.12);
+      }
+
+      .menu-toggle {
+        display: none;
+        border: none;
+        background: transparent;
+        font-size: 1.8rem;
+        cursor: pointer;
+      }
+
+      .hero {
+        position: relative;
+        padding: 80px 0 60px;
+        background:
+          radial-gradient(circle at top right, rgba(197, 139, 61, 0.18), transparent 32%),
+          linear-gradient(180deg, rgba(255,255,255,0.58), rgba(247,246,243,0.9));
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.08fr 0.92fr;
+        align-items: center;
+        gap: 42px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0.55rem 0.9rem;
+        border-radius: 999px;
+        background: rgba(29, 29, 27, 0.04);
+        border: 1px solid var(--line);
+        color: var(--accent);
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .hero h1 {
+        margin-top: 20px;
+        font-size: clamp(2.8rem, 5vw, 5rem);
+        line-height: 0.98;
+        letter-spacing: -0.065em;
+        font-weight: 800;
+      }
+
+      .hero h1 .highlight {
+        display: block;
+        color: var(--primary-dark);
+      }
+
+      .hero p {
+        margin-top: 22px;
+        max-width: 620px;
+        font-size: 1.08rem;
+        color: var(--muted);
+      }
+
+      .hero-actions {
+        margin-top: 28px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 1.4rem;
+        border-radius: 999px;
+        font-weight: 800;
+        transition: transform 0.22s ease, box-shadow 0.22s ease;
+        border: 1px solid transparent;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        color: white;
+        box-shadow: 0 20px 44px rgba(169, 111, 34, 0.28);
+      }
+
+      .btn-secondary {
+        background: white;
+        color: var(--text);
+        border-color: rgba(29, 29, 27, 0.08);
+      }
+
+      .hero-meta {
+        margin-top: 28px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 22px;
+      }
+
+      .meta-box {
+        min-width: 170px;
+      }
+
+      .meta-box strong {
+        display: block;
+        font-size: 1.55rem;
+        letter-spacing: -0.04em;
+      }
+
+      .meta-box span {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .hero-visual {
+        position: relative;
+      }
+
+      .hero-card {
+        background: linear-gradient(180deg, #fcfbf8, rgba(255,255,255,0.85));
+        border: 1px solid rgba(29, 29, 27, 0.06);
+        border-radius: 30px;
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .hero-image {
+        position: relative;
+        overflow: hidden;
+        border-radius: 22px;
+        height: 610px;
+        background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80');
+        background-size: cover;
+        background-position: center;
+      }
+
+      .floating-badge {
+        position: absolute;
+        right: -12px;
+        bottom: 26px;
+        background: rgba(255,255,255,0.9);
+        border: 1px solid rgba(29, 29, 27, 0.06);
+        border-radius: 18px;
+        padding: 18px 20px;
+        box-shadow: var(--shadow);
+        max-width: 220px;
+      }
+
+      .floating-badge strong {
+        display: block;
+        font-size: 1.7rem;
+        letter-spacing: -0.04em;
+      }
+
+      .floating-badge span {
+        color: var(--muted);
+      }
+
+      .feature-strip {
+        margin-top: 40px;
+        padding: 18px 0 0;
+      }
+
+      .feature-strip-inner {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .feature-item {
+        background: rgba(255,255,255,0.7);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 18px 16px;
+      }
+
+      .feature-item strong {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 1rem;
+      }
+
+      .feature-item span {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .section {
+        padding: 110px 0;
+      }
+
+      .about {
+        background: rgba(255,255,255,0.4);
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 42px;
+        align-items: center;
+      }
+
+      .about-image {
+        height: 620px;
+        border-radius: 28px;
+        overflow: hidden;
+        background-image: url('https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1200&q=80');
+        background-size: cover;
+        background-position: center;
+        box-shadow: var(--shadow);
+      }
+
+      .about-copy {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .about-copy p {
+        color: var(--muted);
+        font-size: 1.02rem;
+      }
+
+      .check-list {
+        list-style: none;
+        display: grid;
+        gap: 12px;
+        margin-top: 14px;
+      }
+
+      .check-list li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .check-list li::before {
+        content: "✓";
+        width: 26px;
+        height: 26px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(197, 139, 61, 0.12);
+        color: var(--primary-dark);
+        font-weight: 800;
+      }
+
+      .services-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 24px;
+        margin-bottom: 28px;
+      }
+
+      .services-list {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .service-card {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 28px 20px;
+        box-shadow: 0 10px 28px rgba(18, 24, 23, 0.03);
+        transition: transform 0.22s ease, box-shadow 0.22s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 38px rgba(18, 24, 23, 0.08);
+      }
+
+      .service-icon {
+        width: 54px;
+        height: 54px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 14px;
+        background: rgba(197, 139, 61, 0.12);
+        color: var(--primary-dark);
+        font-size: 1.6rem;
+        margin-bottom: 18px;
+      }
+
+      .service-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+
+      .service-card p {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .why-us {
+        background: linear-gradient(180deg, rgba(29,61,45,0.96), rgba(22,39,31,0.98));
+        color: white;
+      }
+
+      .why-us .section-title,
+      .why-us .section-subtitle {
+        color: white;
+      }
+
+      .why-grid {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .why-card {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 18px;
+        padding: 24px 18px;
+      }
+
+      .why-card strong {
+        display: block;
+        font-size: 2.2rem;
+        letter-spacing: -0.05em;
+        margin-bottom: 8px;
+        color: #f1d6a2;
+      }
+
+      .why-card span {
+        color: rgba(255,255,255,0.74);
+      }
+
+      .work-showcase {
+        padding-top: 110px;
+      }
+
+      .portfolio-grid {
+        margin-top: 28px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .project-card {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 10px 28px rgba(18, 24, 23, 0.04);
+      }
+
+      .project-image {
+        height: 280px;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .project-content {
+        padding: 22px 20px 24px;
+      }
+
+      .project-content small {
+        color: var(--primary-dark);
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .project-content h3 {
+        margin-top: 12px;
+        font-size: 1.35rem;
+      }
+
+      .project-content p {
+        color: var(--muted);
+        margin-top: 10px;
+      }
+
+      .process {
+        background: rgba(255,255,255,0.35);
+      }
+
+      .process-grid {
+        margin-top: 26px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .process-card {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 26px 20px;
+        position: relative;
+      }
+
+      .process-number {
+        position: absolute;
+        top: -18px;
+        left: 18px;
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        color: white;
+        display: grid;
+        place-items: center;
+        font-weight: 800;
+      }
+
+      .process-card h3 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 1.25rem;
+      }
+
+      .process-card p {
+        color: var(--muted);
+      }
+
+      .contact-wrap {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 24px;
+      }
+
+      .contact-card {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 30px 24px;
+      }
+
+      .contact-list {
+        display: grid;
+        gap: 16px;
+        margin-top: 26px;
+      }
+
+      .contact-item {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+      }
+
+      .contact-item .icon {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+        border-radius: 12px;
+        background: rgba(197, 139, 61, 0.12);
+        color: var(--primary-dark);
+        display: grid;
+        place-items: center;
+        font-size: 1.15rem;
+        font-weight: 800;
+      }
+
+      .contact-item strong {
+        display: block;
+        font-size: 0.9rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .contact-item span,
+      .contact-item a {
+        display: block;
+        margin-top: 4px;
+        color: var(--text);
+        font-weight: 700;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .input-group.full {
+        grid-column: 1 / -1;
+      }
+
+      .input-group label {
+        font-size: 0.85rem;
+        font-weight: 800;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .input-group input,
+      .input-group textarea {
+        width: 100%;
+        border: 1px solid var(--line);
+        background: rgba(247,246,243,0.9);
+        border-radius: 14px;
+        padding: 0.95rem 1rem;
+        resize: vertical;
+        outline: none;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .input-group input:focus,
+      .input-group textarea:focus {
+        border-color: rgba(197, 139, 61, 0.8);
+        box-shadow: 0 0 0 4px rgba(197, 139, 61, 0.08);
+      }
+
+      .submit-btn {
+        margin-top: 8px;
+        width: fit-content;
+      }
+
+      footer {
+        background: #111111;
+        color: rgba(255,255,255,0.78);
+        padding: 30px 0;
+      }
+
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .footer-inner strong {
+        color: white;
+      }
+
+      .whatsapp-float {
+        position: fixed;
+        right: 22px;
+        bottom: 24px;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: linear-gradient(180deg, #25d366, #1ebc5a);
+        box-shadow: 0 18px 36px rgba(32, 181, 91, 0.35);
+        color: white;
+        display: grid;
+        place-items: center;
+        font-size: 1.7rem;
+        z-index: 80;
+        transition: transform 0.2s ease;
+      }
+
+      .whatsapp-float:hover {
+        transform: translateY(-2px);
+      }
+
+      @media (max-width: 980px) {
+        .hero-grid,
+        .about-grid,
+        .contact-wrap,
+        .services-list {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .nav {
+          position: absolute;
+          top: 82px;
+          right: 16px;
+          left: 16px;
+          display: none;
+          flex-direction: column;
+          align-items: flex-start;
+          background: rgba(255,255,255,0.96);
+          border: 1px solid var(--line);
+          border-radius: 18px;
+          padding: 18px;
+          box-shadow: var(--shadow);
+        }
+
+        .nav.active {
+          display: flex;
+        }
+
+        .menu-toggle {
+          display: inline-block;
+        }
+
+        .portfolio-grid,
+        .process-grid,
+        .why-grid,
+        .feature-strip-inner {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .section {
+          padding: 90px 0;
+        }
+
+        .services-list,
+        .portfolio-grid,
+        .process-grid,
+        .why-grid,
+        .feature-strip-inner,
+        .form-grid,
+        .about-grid,
+        .contact-wrap {
+          grid-template-columns: 1fr;
+        }
+
+        .services-header {
+          display: block;
+        }
+
+        .nav-cta {
+          width: 100%;
+        }
+
+        .hero-image {
+          height: 460px;
+        }
+
+        .floating-badge {
+          right: 15px;
+          bottom: 15px;
+          max-width: 180px;
+        }
+
+        .hero-actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .btn {
+          width: 100%;
+        }
+
+        .footer-inner {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a href="#inicio" class="brand" aria-label="Construcciones Juan Manuel Moreno">
+          <div class="brand-mark">J</div>
+          <div class="brand-text">
+            <small>Construcciones</small>
+            <strong>Juan Manuel Moreno</strong>
+          </div>
+        </a>
+
+        <nav class="nav" id="nav">
+          <a href="#inicio">Inicio</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#contacto">Contacto</a>
+          <a href="https://wa.me/34636955334" class="nav-cta" target="_blank" rel="noopener">Solicitar presupuesto</a>
+        </nav>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="container hero-grid">
+          <div>
+            <span class="eyebrow">Calidad, confianza y precisión</span>
+            <h1>
+              Construimos
+              <span class="highlight">espacios que viven contigo</span>
+            </h1>
+            <p>
+              En Construcciones Juan Manuel Moreno realizamos obra residencial,
+              remodelaciones, ampliaciones, acabados y rehabilitación con un enfoque
+              cercano, serio y profesional. Trabajamos en Aguilar de la Frontera, Córdoba
+              y alrededores para dar forma a proyectos que buscan calidad, comodidad y valor.
+            </p>
+
+            <div class="hero-actions">
+              <a href="https://wa.me/34636955334" class="btn btn-primary" target="_blank" rel="noopener">Solicitar información</a>
+              <a href="#contacto" class="btn btn-secondary">Hablar con nosotros</a>
+            </div>
+
+            <div class="hero-meta">
+              <div class="meta-box">
+                <strong>+15</strong>
+                <span>Años de experiencia</span>
+              </div>
+              <div class="meta-box">
+                <strong>100%</strong>
+                <span>Compromiso profesional</span>
+              </div>
+              <div class="meta-box">
+                <strong>24/7</strong>
+                <span>Disponibilidad</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-card">
+              <div class="hero-image"></div>
+            </div>
+
+            <div class="floating-badge">
+              <strong>Confianza</strong>
+              <span>Soluciones a medida para cada proyecto</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="container feature-strip">
+          <div class="feature-strip-inner">
+            <div class="feature-item">
+              <strong>Residencial</strong>
+              <span>Casas, reformas y ampliaciones.</span>
+            </div>
+            <div class="feature-item">
+              <strong>Remodelación</strong>
+              <span>Transformación de espacios.</span>
+            </div>
+            <div class="feature-item">
+              <strong>Pisos y acabados</strong>
+              <span>Detalles con acabado impecable.</span>
+            </div>
+            <div class="feature-item">
+              <strong>Mantenimiento</strong>
+              <span>Rehabilitación y continuidad.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section about" id="nosotros">
+        <div class="container about-grid">
+          <div class="about-image" aria-label="Trabajos de construcción y remodelación"></div>
+
+          <div class="about-copy">
+            <span class="eyebrow" style="width: fit-content;">Sobre nosotros</span>
+            <h2 class="section-title">Diseñamos y ejecutamos proyectos con rigor y atención al detalle.</h2>
+
+            <p>
+              En Construcciones Juan Manuel Moreno apostamos por la calidad, la honestidad
+              y la mejora continua. Nuestro trabajo combina experiencia práctica, criterio
+              constructivo y una visión clara del resultado final.
+            </p>
+
+            <p>
+              Desde pequeñas intervenciones hasta proyectos de mayor envergadura, cada obra
+              se desarrolla con planificación, responsabilidad y compromiso con el cliente.
+              La satisfacción de crear espacios útiles, bonitos y duraderos es nuestra mayor
+              motivación.
+            </p>
+
+            <ul class="check-list">
+              <li>Atención personalizada en cada proyecto.</li>
+              <li>Soluciones eficaces para reformas y rehabilitaciones.</li>
+              <li>Compromiso con la calidad y la puntualidad.</li>
+              <li>Trabajo cercano en Aguilar de la Frontera y alrededores.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="servicios">
+        <div class="container">
+          <div class="services-header">
+            <div>
+              <span class="eyebrow">Nuestros servicios</span>
+              <h2 class="section-title">Soluciones integrales para tu hogar o proyecto.</h2>
+            </div>
+            <p class="section-subtitle">
+              Te ayudamos a materializar espacios funcionales, estéticos y seguros,
+              adaptados a tus necesidades y al estilo de vida que quieres construir.
+            </p>
+          </div>
+
+          <div class="services-list">
+            <article class="service-card">
+              <div class="service-icon">🏠</div>
+              <h3>Construcción de casas</h3>
+              <p>Obra nueva con control de calidad, materiales adecuados y un acabado cuidado.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon">🛠️</div>
+              <h3>Remodelaciones</h3>
+              <p>Reformas integrales para optimizar espacios, mejorar estética y funcionalidad.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon">📐</div>
+              <h3>Pisos y acabados</h3>
+              <p>Acabados impecables, pavimentos y soluciones estéticas para cada ambiente.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon">🏗️</div>
+              <h3>Ampliaciones</h3>
+              <p>Ampliamos y redistribuimos tu vivienda con un criterio práctico y bien ejecutado.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon">🧱</div>
+              <h3>Mantenimiento</h3>
+              <p>Intervenciones para mantener en óptimas condiciones tu hogar o propiedad.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon">🏚️</div>
+              <h3>Rehabilitación</h3>
+              <p>Recuperación de viviendas y espacios para devolverles funcionalidad y valor.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon">🔧</div>
+              <h3>Soluciones a medida</h3>
+              <p>Adaptamos el trabajo a tus prioridades, presupuesto y tiempos.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon">✅</div>
+              <h3>Asesoramiento</h3>
+              <p>Te orientamos con criterio técnico para tomar decisiones acertadas.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section why-us">
+        <div class="container">
+          <span class="eyebrow" style="background: rgba(255,255,255,0.08); color: white; border-color: rgba(255,255,255,0.12);">¿Por qué elegirnos?</span>
+          <h2 class="section-title">Trabajamos para crear soluciones fiables, duraderas y bien ejecutadas.</h2>
+          <p class="section-subtitle" style="color: rgba(255,255,255,0.74);">
+            Nos caracterizamos por la seriedad, la cercanía y la calidad de ejecución en cada obra.
+          </p>
+
+          <div class="why-grid">
+            <div class="why-card">
+              <strong>+15</strong>
+              <span>Años de experiencia en obra y reformas.</span>
+            </div>
+
+            <div class="why-card">
+              <strong>100%</strong>
+              <span>Enfoque en la calidad y la satisfacción.</span>
+            </div>
+
+            <div class="why-card">
+              <strong>24/7</strong>
+              <span>Disponibilidad para atender consultas.</span>
+            </div>
+
+            <div class="why-card">
+              <strong>✔</strong>
+              <span>Trabajo cercano, honesto y responsable.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="work-showcase section" id="proyectos">
+        <div class="container">
+          <div class="services-header">
+            <div>
+              <span class="eyebrow">Trabajos realizados</span>
+              <h2 class="section-title">Obras con identidad, funcionalidad y buen resultado.</h2>
+            </div>
+            <p class="section-subtitle">
+              Aquí mostramos algunos tipos de trabajos que realizamos, con estilo visual
+              moderno y una presentación clara para inspirarte.
+            </p>
+          </div>
+
+          <div class="portfolio-grid">
+            <article class="project-card">
+              <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80');"></div>
+              <div class="project-content">
+                <small>Residencial</small>
+                <h3>Casa unifamiliar reformada</h3>
+                <p>Redistribución de espacios, renovación integral y mejora estética interior.</p>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80');"></div>
+              <div class="project-content">
+                <small>Ampliación</small>
+                <h3>Ampliación de vivienda</h3>
+                <p>Creación de nuevos espacios sin perder la armonía del conjunto.</p>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80');"></div>
+              <div class="project-content">
+                <small>Acabados</small>
+                <h3>Pisos y acabados premium</h3>
+                <p>Materiales, limpieza visual y detalles finales con un alto nivel de calidad.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section process">
+        <div class="container">
+          <span class="eyebrow">Nuestro proceso</span>
+          <h2 class="section-title">Un trabajo claro, ordenado y centrado en tus necesidades.</h2>
+
+          <div class="process-grid">
+            <article class="process-card">
+              <div class="process-number">1</div>
+              <h3>Consulta inicial</h3>
+              <p>Escuchamos tu idea y analizamos tus objetivos, espacio y prioridad del proyecto.</p>
+            </article>
+
+            <article class="process-card">
+              <div class="process-number">2</div>
+              <h3>Planificación</h3>
+              <p>Definimos la mejor propuesta, materiales, tiempos y enfoque de ejecución.</p>
+            </article>
+
+            <article class="process-card">
+              <div class="process-number">3</div>
+              <h3>Ejecutamos</h3>
+              <p>Desarrollamos la obra con rigor, tratamiento profesional y atención constante.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contacto">
+        <div class="container contact-wrap">
+          <div class="contact-card">
+            <span class="eyebrow">Contacto</span>
+            <h2 class="section-title">Hablemos de tu proyecto.</h2>
+            <p class="section-subtitle">
+              Estamos disponibles para ayudarte a plantear, reformar o rehabilitar tu espacio.
+            </p>
+
+            <div class="contact-list">
+              <div class="contact-item">
+                <div class="icon">☎</div>
+                <div>
+                  <strong>Teléfono</strong>
+                  <a href="tel:+34636955334">+34 636 95 53 34</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="icon">✉</div>
+                <div>
+                  <strong>Email</strong>
+                  <a href="mailto:construccionesmoreluq.sl@hotmail.com">construccionesmoreluq.sl@hotmail.com</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="icon">📍</div>
+                <div>
+                  <strong>Ubicación</strong>
+                  <span>Aguilar de la Frontera, Córdoba y alrededores</span>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="icon">⏰</div>
+                <div>
+                  <strong>Disponibilidad</strong>
+                  <span>Disponibles todo el día</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <form id="contactForm" action="https://formspree.io/f/your-id" method="POST">
+              <div class="form-grid">
+                <div class="input-group">
+                  <label for="nombre">Nombre</label>
+                  <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required />
+                </div>
+
+                <div class="input-group">
+                  <label for="telefono">Teléfono</label>
+                  <input id="telefono" name="telefono" type="tel" placeholder="Tu teléfono" required />
+                </div>
+
+                <div class="input-group full">
+                  <label for="correo">Correo electrónico</label>
+                  <input id="correo" name="correo" type="email" placeholder="Tu correo" required />
+                </div>
+
+                <div class="input-group full">
+                  <label for="mensaje">Mensaje</label>
+                  <textarea id="mensaje" name="mensaje" rows="6" placeholder="Cuéntanos qué proyecto tienes en mente..." required></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary submit-btn">Enviar consulta</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <div>
+          <strong>Construcciones Juan Manuel Moreno</strong>
+        </div>
+        <div>© 2025 Todos los derechos reservados.</div>
+      </div>
+    </footer>
+
+    <a class="whatsapp-float" href="https://wa.me/34636955334" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+      💬
+    </a>
+
+    <script>
+      const menuToggle = document.getElementById("menuToggle");
+      const nav = document.getElementById("nav");
+
+      menuToggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+      });
+
+      nav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => nav.classList.remove("active"));
+      });
+
+      const contactForm = document.getElementById("contactForm");
+      contactForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const button = contactForm.querySelector("button[type='submit']");
+        const originalText = button.textContent;
+
+        button.textContent = "Consulta enviada";
+        button.disabled = true;
+
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.disabled = false;
+          contactForm.reset();
+        }, 2200);
+      });
+    </script>
+  </body>
+</html>
